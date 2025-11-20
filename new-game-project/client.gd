@@ -1,0 +1,78 @@
+extends Node
+
+var socket := WebSocketPeer.new()
+
+var host := "ws://10.202.176.227:9876"
+var port := "9876"
+var api_version = "0.91"
+var client_type = "godot"
+var role = "weapons"
+var team = "tech"
+
+var connected := false
+
+var ship = { "total_power" : 4,
+		 "available_power" : 1,
+		 "pilot_power" : 1,
+		 "science_power" : 1,
+		 "weapon_power" : 1,
+		 "shield" : 0
+	}
+	
+func log_message(message: String) -> void:
+	var time := "%s | " % Time.get_time_string_from_system()
+	print(time + message)
+
+func _ready() -> void:
+	pass
+
+func _process(_delta: float) -> void:
+	socket.poll()
+
+	if socket.get_ready_state() == WebSocketPeer.STATE_OPEN:
+		while socket.get_available_packet_count():
+			var server_message = socket.get_packet().get_string_from_ascii()
+			var server_response = JSON.new()
+			if server_response.parse(server_message) == OK:
+				var response = server_response.data
+				if response["type"] == "status":
+					log_message("Here is the ship status: ")
+					print(response["data"])
+
+func _exit_tree() -> void:
+	socket.close()
+
+func server_connect(_host, _role, _team):
+	host = _host
+	role = _role
+	team = _team
+	var websocket_url : String = "ws://"+host+":"+port
+	if socket.connect_to_url(websocket_url) != OK:
+		log_message("Unable to connect.")
+		set_process(false)
+	else:
+		var state = socket.get_ready_state()
+
+		while state == WebSocketPeer.STATE_CONNECTING:
+			state = socket.get_ready_state() 
+			socket.poll()
+		connected = true
+		var instruction = {"action":"join"}
+		send_instruction(instruction)
+		print("Connected!")
+
+#Moves power up or down for a target module. Enforced by server.
+func power(direction, target):
+	var instruction = {"action":"power", "direction":direction, "target":target}
+	send_instruction(instruction)
+
+func shoot(target : int) -> void:
+	var instruction = {"action":"shoot", "weapon_id":target}
+	send_instruction(instruction)
+	
+func send_instruction(instruction: Dictionary):
+	#socket.put_packet(message.to_utf8_buffer())
+	instruction["role"] = role
+	instruction["team"] = team
+	instruction["version"] = api_version
+	socket.send_text(JSON.stringify(instruction))
