@@ -1,0 +1,104 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfhqtytwiylgd"]
+
+[ext_resource type="Script" uid="uid://d1okw6rhai03w" path="res://slider.gd" id="1_gkr5f"]
+[ext_resource type="Texture2D" uid="uid://oeq7hmqquj75" path="res://12445922.jpg.l_thumbnail.png" id="2_xdxfm"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_gkr5f")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+visible = false
+polygon = PackedVector2Array(-168, -56, 1272, -56, 1264, 752, -208, 760)
+
+[node name="Polygon2D2" type="Polygon2D" parent="."]
+visible = false
+position = Vector2(-23.999998, 46.7343)
+scale = Vector2(0.2658583, 0.8181772)
+color = Color(0.7539839, 0.75398386, 0.75398386, 1)
+polygon = PackedVector2Array(-168, -56, 1271.9999, -57.119995, 1268.0181, 346.1941, 1264, 752, -208, 760)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Pilot" type="VSlider" parent="Control"]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 352.0
+offset_right = 72.0
+offset_bottom = 634.0
+max_value = 6.0
+
+[node name="Science" type="VSlider" parent="Control"]
+layout_mode = 0
+offset_left = 136.0
+offset_top = 352.0
+offset_right = 152.0
+offset_bottom = 634.0
+max_value = 6.0
+value = 1.0
+
+[node name="Shooter" type="VSlider" parent="Control"]
+layout_mode = 0
+offset_left = 216.0
+offset_top = 352.0
+offset_right = 232.0
+offset_bottom = 634.0
+max_value = 6.0
+value = 1.0
+
+[node name="Power_Supply" type="TextEdit" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 2.6
+anchor_top = 7.0
+anchor_right = 4.0
+anchor_bottom = 7.8
+offset_right = 8.0
+offset_bottom = 8.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 3.1250002
+anchor_bottom = 0.4
+offset_left = 1008.00006
+offset_top = 16.0
+offset_right = 1091.0
+offset_bottom = 208.0
+scale = Vector2(0.6, 0.6)
+action_mode = 0
+icon = ExtResource("2_xdxfm")
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 328.0
+offset_right = 240.0
+offset_bottom = 376.0
+text = "P                  S                W"
+
+[node name="Button2" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 936.0
+offset_top = 312.0
+offset_right = 1064.0
+offset_bottom = 400.0
+
+[node name="Button3" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 936.0
+offset_top = 512.0
+offset_right = 1064.0
+offset_bottom = 600.0
+
+[connection signal="value_changed" from="Control/Pilot" to="." method="_on_pilot_value_changed"]
+[connection signal="value_changed" from="Control/Science" to="." method="_on_science_value_changed"]
+[connection signal="value_changed" from="Control/Shooter" to="." method="_on_shooter_value_changed"]
+[connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Control/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Control/Button3" to="." method="_on_button_3_pressed"]
