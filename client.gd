@@ -1,5 +1,7 @@
 extends Node
-var myNode = preload("res://minigame.tscn")
+
+
+
 var socket := WebSocketPeer.new()
 
 var host := "ws://10.202.176.250:9876"

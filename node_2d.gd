@@ -1,6 +1,5 @@
 extends Node2D
 
-
 @export var rotation_speed = PI - 0.02
 
 

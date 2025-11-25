@@ -1,6 +1,6 @@
 extends Node2D
-
 var socket := WebSocketPeer.new()
+
 
 #Change these variables as needed
 var server_ip := "10.202.176.250"
@@ -8,6 +8,7 @@ var role := "weapons"
 var team := "tech"
 
 func _ready() -> void:
+	
 	pass
 
 func _process(_delta: float) -> void:
@@ -101,3 +102,9 @@ func _on_shooter_value_changed(value: float) -> void:
 		global_client_TEngineer.power("down", "weapons")
 	else:
 		$Control/Shooter.value = global_client_TEngineer.ship["weapon_power"]
+
+
+func _on_button_4_pressed() -> void:
+	var minigamething = load("res://minigame.tscn")
+	var new_minigame = minigamething.instantiate()
+	add_child(new_minigame)

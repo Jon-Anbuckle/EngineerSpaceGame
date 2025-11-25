@@ -66,10 +66,10 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 3.1250002
 anchor_bottom = 0.4
-offset_left = 1008.00006
-offset_top = 16.0
-offset_right = 1091.0
-offset_bottom = 208.0
+offset_left = 22.000061
+offset_top = 18.0
+offset_right = 105.00005
+offset_bottom = 210.0
 scale = Vector2(0.6, 0.6)
 action_mode = 0
 icon = ExtResource("2_xdxfm")
@@ -85,16 +85,24 @@ text = "P                  S                W"
 [node name="Button2" type="Button" parent="Control"]
 layout_mode = 0
 offset_left = 936.0
-offset_top = 312.0
-offset_right = 1064.0
-offset_bottom = 400.0
+offset_top = 272.0
+offset_right = 1108.0
+offset_bottom = 392.0
 
 [node name="Button3" type="Button" parent="Control"]
 layout_mode = 0
 offset_left = 936.0
-offset_top = 512.0
-offset_right = 1064.0
-offset_bottom = 600.0
+offset_top = 488.0
+offset_right = 1108.0
+offset_bottom = 608.0
+
+[node name="Button4" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 936.0
+offset_top = 40.0
+offset_right = 1108.0
+offset_bottom = 159.0
+text = "Minigame"
 
 [connection signal="value_changed" from="Control/Pilot" to="." method="_on_pilot_value_changed"]
 [connection signal="value_changed" from="Control/Science" to="." method="_on_science_value_changed"]
@@ -102,3 +110,4 @@ offset_bottom = 600.0
 [connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Control/Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="Control/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="Control/Button4" to="." method="_on_button_4_pressed"]
