@@ -12,6 +12,7 @@ size = Vector2(37.660774, 27.800926)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_176e0"]
 
 [node name="Node2D" type="Node2D"]
+position = Vector2(0, 32)
 script = ExtResource("1_gdft7")
 
 [node name="Button" type="Button" parent="."]
@@ -20,7 +21,9 @@ offset_top = 34.0
 offset_right = 826.0
 offset_bottom = 534.0
 focus_mode = 0
+theme_override_font_sizes/font_size = 96
 text = "PRESS"
+flat = true
 metadata/_edit_use_anchors_ = true
 
 [node name="Dfn55Mv7b57012bB6a744e2B5c00a405972d997" type="Sprite2D" parent="."]

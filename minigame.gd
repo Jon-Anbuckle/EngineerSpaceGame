@@ -13,20 +13,21 @@ func _ready() -> void:
 var detected = false
 
 
-func _on_area_2d_area_entered(area: Area2D) -> void:
+func _on_area_2d_area_entered(_area: Area2D) -> void:
 	detected = true
 	print("8")
 
 
 
-func _on_area_2d_area_exited(area: Area2D) -> void:
+func _on_area_2d_area_exited(_area: Area2D) -> void:
 	detected = false
 	print("0")
 
 func _on_button_button_down() -> void:
-	if detected == true:
-		global_client_TEngineer.ship["total_power"] += 2
-		print(global_client_TEngineer.ship["total_power"])
+	if detected:
+		get_parent().charge += 10
 		
-	elif detected == false:
+	else:
 		print("10")
+	get_parent().minigame_status = false
+	queue_free()

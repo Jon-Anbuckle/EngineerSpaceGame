@@ -4,7 +4,7 @@ extends Node
 
 var socket := WebSocketPeer.new()
 
-var host := "ws://10.202.176.250:9876"
+var host := "ws://10.202.176.198:9876"
 var port := "9876"
 var api_version = "0.91"
 var client_type = "godot"
@@ -77,6 +77,10 @@ func power(direction, target):
 
 func shoot(target : int) -> void:
 	var instruction = {"action":"shoot", "weapon_id":target}
+	send_instruction(instruction)
+	
+func overcharge():
+	var instruction = {"action":"overcharge"}
 	send_instruction(instruction)
 	
 func send_instruction(instruction: Dictionary):

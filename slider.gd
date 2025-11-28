@@ -3,12 +3,17 @@ var socket := WebSocketPeer.new()
 
 
 #Change these variables as needed
-var server_ip := "10.202.176.250"
+var server_ip := "10.202.176.198"
 var role := "weapons"
 var team := "tech"
+var minigame_status = false
+var charge = 0
+var immobalized = false
+
+var minigamething = load("res://minigame.tscn")
+var new_minigame
 
 func _ready() -> void:
-	
 	pass
 
 func _process(_delta: float) -> void:
@@ -17,7 +22,11 @@ func _process(_delta: float) -> void:
 		$Control/Science.value = global_client_TEngineer.ship["science_power"]
 		$Control/Shooter.value = global_client_TEngineer.ship["weapon_power"]
 		$Control/Power_Supply.text = str(global_client_TEngineer.ship["available_power"])
-
+	$Charge.text = str(charge)
+	if immobalized == true:
+		await get_tree().create_timer(10.0).timeout
+		immobalized = false
+		print("Back in action!")
 func _exit_tree() -> void:
 	socket.close()
 	
@@ -79,10 +88,16 @@ func _on_button_pressed() -> void:
 
 
 func _on_button_2_pressed() -> void:
-	print(".")
+	if charge >= 10 and not immobalized:
+		global_client_TEngineer.overcharge()
+		print("L")
+		charge -= 10
+		immobalized = true
 
 func _on_button_3_pressed() -> void:
-	print(".")
+	if charge >= 10 and not immobalized:
+		charge -= 10
+		global_client_TEngineer.special()
 
 
 func _on_science_value_changed(value: float) -> void:
@@ -105,6 +120,7 @@ func _on_shooter_value_changed(value: float) -> void:
 
 
 func _on_button_4_pressed() -> void:
-	var minigamething = load("res://minigame.tscn")
-	var new_minigame = minigamething.instantiate()
-	add_child(new_minigame)
+	if not minigame_status and not immobalized and charge < 20:
+		new_minigame = minigamething.instantiate()
+		add_child(new_minigame)
+		minigame_status = true
