@@ -5,9 +5,7 @@ extends Node2D
 @onready var minstant = get_node("res://slider.gd")
 func _ready() -> void:
 	visible = true
-	#DBDtimer.wait_time = 5
-	#DBDtimer.one_shot = true
-	#DBDtimer.autostart = false
+	DBDtimer.start()
 	pass
 
 var detected = false
@@ -26,8 +24,12 @@ func _on_area_2d_area_exited(_area: Area2D) -> void:
 func _on_button_button_down() -> void:
 	if detected:
 		get_parent().charge += 10
-		
 	else:
 		print("10")
+	get_parent().minigame_status = false
+	queue_free()
+
+
+func _on_timer_timeout() -> void:
 	get_parent().minigame_status = false
 	queue_free()
