@@ -1,0 +1,19 @@
+63f7b34db8d8cdea90c76aacccf841ec
+::res://::1764780005
+3d-square-metal-frame-on-a-transparent-background-png.png::CompressedTexture2D::7823967791261779154::1764779981::1764780006::1::::<><><>0<>0<>3a2f5f8488a18aeaf212413fd189d937<>res://.godot/imported/3d-square-metal-frame-on-a-transparent-background-png.png-3dbd77d90f308866c71bd28363feaffb.ctex::
+12445922.jpg.l_thumbnail.png::CompressedTexture2D::991930326188162338::1764779981::1764780006::1::::<><><>0<>0<>a7cccea3f2384b02a6fda5b405f9d172<>res://.godot/imported/12445922.jpg.l_thumbnail.png-25715630a96c993a715c78de39c3235a.ctex::
+abstract-futuristic-circuit-board-on-dark-blue-background-digital-technology-concept-vector.jpg::CompressedTexture2D::2299056450268313346::1764779981::1764780006::1::::<><><>0<>0<>033cc80ff55c3a8da272695d81ab0f84<>res://.godot/imported/abstract-futuristic-circuit-board-on-dark-blue-background-digital-technology-concept-vector.jpg-122d5fe55b302ebea84aa82916a59268.ctex::
+client.gd::GDScript::3321582411787611363::1764779981::0::1::::<>Node<><>0<>0<><>::
+combination_wrench_not_size__82217.1633978636_678x700.webp::CompressedTexture2D::2550129639400784362::1764779981::1764780006::1::::<><><>0<>0<>64bc57f4ef19fe1c5bbea79924f09f72<>res://.godot/imported/combination_wrench_not_size__82217.1633978636_678x700.webp-fe2791182a59229f6bf42537de1c6bce.ctex::
+controlpad.tscn::PackedScene::5139242922746152507::1764779981::0::1::::<><><>0<>0<><>::uid://d1okw6rhai03w::::res://slider.gd<>uid://l807jx4o8ujx::::res://images (2).jpg<>uid://oeq7hmqquj75::::res://12445922.jpg.l_thumbnail.png<>uid://p5mk437ba68v::::res://output-onlinejpgtools (1).png<>uid://bclki6sshnrti::::res://combination_wrench_not_size__82217.1633978636_678x700.webp<>uid://70xehfnjjrlq::::res://abstract-futuristic-circuit-board-on-dark-blue-background-digital-technology-concept-vector.jpg<>uid://djp8uva8aepcs::::res://3d-square-metal-frame-on-a-transparent-background-png.png
+dfn55mv-7b57012b-b6a7-44e2-b5c0-0a405972d997.png::CompressedTexture2D::4327833849906247722::1764779981::1764780006::1::::<><><>0<>0<>8bd64a433ca5746cf1bba47633aae0b3<>res://.godot/imported/dfn55mv-7b57012b-b6a7-44e2-b5c0-0a405972d997.png-da7e12bdda6db414fa5030d57bde340f.ctex::
+icon.svg::CompressedTexture2D::1790880795757653::1764779981::1764780006::1::::<><><>0<>0<>1d558fff71561543e2cf7e0d300c3350<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+images (2).jpg::CompressedTexture2D::841777325704756449::1764779981::1764780006::1::::<><><>0<>0<>78154105ed57fd4bdd7f5d87e08e5fe5<>res://.godot/imported/images (2).jpg-2dfb706f2c1f6b45b1fcb990e2bc9981.ctex::
+minigame.gd::GDScript::1236677597010450108::1764779981::0::1::::<>Node2D<><>0<>0<><>::
+minigame.tscn::PackedScene::7804374187552902343::1764779981::0::1::::<><><>0<>0<><>::uid://b2wo15vp0jhxi::::res://dfn55mv-7b57012b-b6a7-44e2-b5c0-0a405972d997.png<>uid://rvb5tvy7y0ke::::res://minigame.gd<>uid://dpq13e52ceay7::::res://pointer.png<>uid://dt3nc4our1mgp::::res://node_2d.gd<>uid://db3copx8l4643::::res://node_2d_2.gd
+node_2d.gd::GDScript::8551447095546244203::1764779981::0::1::::<>Node2D<><>0<>0<><>::
+node_2d_2.gd::GDScript::7287400731827209834::1764779981::0::1::::<>Node2D<><>0<>0<><>::
+output-onlinejpgtools (1).png::CompressedTexture2D::1115512016931510275::1764779981::1764780006::1::::<><><>0<>0<>b2725fb54dc416192422a73780be10cc<>res://.godot/imported/output-onlinejpgtools (1).png-e5e3506a718955f115c6dda81e43569f.ctex::
+pointer.gd::GDScript::6231005238950600582::1764779981::0::1::::<>Sprite2D<><>0<>0<><>::
+pointer.png::CompressedTexture2D::8246753651423130736::1764779981::1764780006::1::::<><><>0<>0<>af87e68de4f29790c67e6357e7d61a0e<>res://.godot/imported/pointer.png-1cfc1373c364efd7dde6b7804e352ca4.ctex::
+slider.gd::GDScript::9013721386422476178::1764779981::0::1::::<>Node2D<><>0<>0<><>::
