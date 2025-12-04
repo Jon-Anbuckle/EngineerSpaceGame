@@ -3,7 +3,7 @@ var socket := WebSocketPeer.new()
 
 
 #Change these variables as needed
-var server_ip := "10.202.183.53"
+var server_ip := "10.184.1.88"
 var role := "engineer"
 var team := "tech"
 var minigame_status = false
@@ -24,9 +24,12 @@ func _process(_delta: float) -> void:
 		$Control/Power_Supply.text = str(global_client_TEngineer.ship["available_power"])
 	$Charge.text = str(charge)
 	if immobalized == true:
-		await get_tree().create_timer(10.0).timeout
+		await get_tree().create_timer(4.0).timeout
 		immobalized = false
 		print("Back in action!")
+	
+	if not global_client_TEngineer.connected:
+		queue_free()
 func _exit_tree() -> void:
 	socket.close()
 	
@@ -83,8 +86,8 @@ func _on_pilot_value_changed(value: float) -> void:
 		$Control/Pilot.value = global_client_TEngineer.ship["pilot_power"]
 
 
-func _on_button_pressed() -> void:
-	global_client_TEngineer.server_connect(server_ip, role, team)
+#func _on_button_pressed() -> void:
+	#global_client_TEngineer.server_connect(server_ip, role, team)
 
 
 func _on_button_2_pressed() -> void:

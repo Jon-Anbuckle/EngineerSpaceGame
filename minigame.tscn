@@ -44,13 +44,44 @@ script = ExtResource("3_176e0")
 [node name="Polygon2D3" type="Polygon2D" parent="Node2D2"]
 position = Vector2(-1.5258789e-05, 185.53833)
 rotation = -2.2549653
+color = Color(0, 0.5254902, 1, 1)
 offset = Vector2(-700.63403, -384)
 polygon = PackedVector2Array(679.5384, 390.61536, 697.07684, 404.46152, 722, 376, 703.5384, 362.92307)
 
-[node name="Area2D" type="Area2D" parent="Node2D2/Polygon2D3"]
+[node name="BigArea" type="Area2D" parent="Node2D2/Polygon2D3"]
 position = Vector2(1.8461323, -1.8461132)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D2/Polygon2D3/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D2/Polygon2D3/BigArea"]
+position = Vector2(-1.8461239, 1.846122)
+rotation = 2.2165682
+shape = SubResource("RectangleShape2D_oemwr")
+
+[node name="Polygon2D4" type="Polygon2D" parent="Node2D2"]
+position = Vector2(-35.99997, 182.7691)
+rotation = -5.2028265
+color = Color(0.13333334, 1, 1, 1)
+offset = Vector2(-700.63403, -384)
+polygon = PackedVector2Array(679.5384, 390.61536, 697.07684, 404.46152, 722, 376, 703.5384, 362.92307)
+
+[node name="LittleArea" type="Area2D" parent="Node2D2/Polygon2D4"]
+position = Vector2(1.8461323, -1.8461132)
+
+[node name="LittleArea" type="CollisionShape2D" parent="Node2D2/Polygon2D4/LittleArea"]
+position = Vector2(-1.8461239, 1.846122)
+rotation = 2.2165682
+shape = SubResource("RectangleShape2D_oemwr")
+
+[node name="Polygon2D5" type="Polygon2D" parent="Node2D2"]
+position = Vector2(37.846092, 186.46141)
+rotation = -2.2549653
+color = Color(0.13333334, 1, 1, 1)
+offset = Vector2(-700.63403, -384)
+polygon = PackedVector2Array(679.5384, 390.61536, 697.07684, 404.46152, 722, 376, 703.5384, 362.92307)
+
+[node name="LittleArea" type="Area2D" parent="Node2D2/Polygon2D5"]
+position = Vector2(1.8461323, -1.8461132)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D2/Polygon2D5/LittleArea"]
 position = Vector2(-1.8461239, 1.846122)
 rotation = 2.2165682
 shape = SubResource("RectangleShape2D_oemwr")
@@ -76,6 +107,10 @@ wait_time = 5.0
 autostart = true
 
 [connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
-[connection signal="area_entered" from="Node2D2/Polygon2D3/Area2D" to="." method="_on_area_2d_area_entered"]
-[connection signal="area_exited" from="Node2D2/Polygon2D3/Area2D" to="." method="_on_area_2d_area_exited"]
+[connection signal="area_entered" from="Node2D2/Polygon2D3/BigArea" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Node2D2/Polygon2D3/BigArea" to="." method="_on_area_2d_area_exited"]
+[connection signal="area_entered" from="Node2D2/Polygon2D4/LittleArea" to="." method="_on_little_area_area_entered"]
+[connection signal="area_exited" from="Node2D2/Polygon2D4/LittleArea" to="." method="_on_little_area_area_exited"]
+[connection signal="area_entered" from="Node2D2/Polygon2D5/LittleArea" to="." method="_on_little_area_area_entered"]
+[connection signal="area_exited" from="Node2D2/Polygon2D5/LittleArea" to="." method="_on_little_area_area_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

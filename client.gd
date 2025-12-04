@@ -4,11 +4,11 @@ extends Node
 
 var socket := WebSocketPeer.new()
 
-var host := "ws://10.202.183.53:9876"
+var host := "ws://10.184.1.88:9876"
 var port := "9876"
 var api_version = "0.91"
 var client_type = "godot"
-var role = "engine"
+var role = "engineer"
 var team = "tech"
 
 var connected := false
