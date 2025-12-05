@@ -13,7 +13,10 @@ offset_bottom = 400.0
 text = "Connection"
 
 [node name="TextEdit" type="TextEdit" parent="."]
-offset_right = 8.0
-offset_bottom = 8.0
+offset_left = 296.0
+offset_top = 176.0
+offset_right = 832.0
+offset_bottom = 208.0
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="text_changed" from="TextEdit" to="." method="_on_text_edit_text_changed"]

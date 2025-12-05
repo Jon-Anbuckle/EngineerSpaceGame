@@ -3,9 +3,6 @@ var socket := WebSocketPeer.new()
 
 
 #Change these variables as needed
-var server_ip := "10.184.1.88"
-var role := "engineer"
-var team := "tech"
 var minigame_status = false
 var charge = 0
 var immobalized = false
