@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://o715nfq0ecx8"]
+
+[ext_resource type="Script" uid="uid://dh1gcrlsdynmb" path="res://script/quick_time.gd" id="1_w3tp1"]
+[ext_resource type="PackedScene" uid="uid://bukgnhyimuo2t" path="res://scene/coin.tscn" id="2_8jecs"]
+
+[node name="QuickTime" type="Node2D"]
+position = Vector2(573, 451)
+script = ExtResource("1_w3tp1")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+offset_left = 525.0
+offset_top = 420.0
+offset_right = 623.0
+offset_bottom = 493.0
+
+[node name="coin" parent="CanvasLayer" instance=ExtResource("2_8jecs")]
+position = Vector2(1118, 37)
+
+[node name="Label" type="Label" parent="CanvasLayer/coin"]
+offset_left = -22.0
+offset_top = 32.0
+offset_right = 18.0
+offset_bottom = 55.0
+
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
